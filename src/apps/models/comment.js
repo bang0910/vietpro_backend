@@ -14,7 +14,7 @@ const commentSchema = new mongoose.Schema(
       required: true,
     },
     product_id: {
-      type: mongoose.Types.ObjectId,
+      type: String,
       required: true,
       ref: "Products",
     },

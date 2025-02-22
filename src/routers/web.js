@@ -8,8 +8,12 @@ const OrderController = require("../apps/controllers/apis/order");
 //Router
 
 router.get(
-  `${config.get("app.prefixApiVersion")}/category`,
+  `${config.get("app.prefixApiVersion")}/categories`,
   CategoriesController.index
+);
+router.get(
+  `${config.get("app.prefixApiVersion")}/categories/:id`,
+  CategoriesController.show
 );
 router.get(
   `${config.get("app.prefixApiVersion")}/order`,
@@ -18,6 +22,18 @@ router.get(
 router.get(
   `${config.get("app.prefixApiVersion")}/products`,
   ProductController.index
+);
+router.get(
+  `${config.get("app.prefixApiVersion")}/products/:id`,
+  ProductController.show
+);
+router.get(
+  `${config.get("app.prefixApiVersion")}/products/:id/comments`,
+  ProductController.comments
+);
+router.post(
+  `${config.get("app.prefixApiVersion")}/products/:id/comments`,
+  ProductController.storeComments
 );
 
 module.exports = router;
