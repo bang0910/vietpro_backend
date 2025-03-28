@@ -9,6 +9,7 @@ exports.index = async (req, res) => {
     const skip = page * limit - limit;
     if (req.query.is_featured) query.is_featured = req.query.is_featured;
     if (req.query.is_stock) query.is_stock = req.query.is_stock;
+    if (req.query.name) query.$text = { $search: req.query.name };
     const products = await ProductModel.find(query)
       .sort({ _id: -1 })
       .skip(skip)

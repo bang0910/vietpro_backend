@@ -3,6 +3,7 @@ const categorySChema = new mongoose.Schema(
   {
     name: {
       type: String,
+      text: true,
       required: true,
     },
   },
