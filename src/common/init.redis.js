@@ -1,6 +1,6 @@
 const { createClient } = require("redis");
 const client = createClient({
-  url: "redis://default:77fz5OgZHPK63zDIuQy9PiPkMgPEfl0c@redis-12960.c98.us-east-1-4.ec2.redns.redis-cloud.com:12960",
+  url: " redis://default:ayzymmuXdxMdxhhnHtSc2i6yEc4ZIK20@redis-17198.c81.us-east-1-2.ec2.redns.redis-cloud.com:17198",
 });
 client.on("error", (error) => console.log("Redis client error", error));
 const connectionRedis = () => {
